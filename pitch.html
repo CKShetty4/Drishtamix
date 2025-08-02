@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<link rel="icon" type="image/x-icon" href="Drishtamix.ico">
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drishtamix: A Vision Explained - The Next Generation Social Ecosystem</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e7e4dd;
+            /* Off-white */
+            color: #1a202c;
+        }
+
+        .drishti-gradient-text {
+            background: linear-gradient(90deg, #004d40, #26a69a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .drishti-bg-green {
+            background-color: #004d40;
+        }
+
+        /* Deep Forest Green */
+        .drishti-text-green {
+            color: #004d40;
+        }
+
+        .drishti-bg-blue {
+            background-color: #0288d1;
+        }
+
+        /* Tech Blue */
+        .drishti-text-blue {
+            color: #0288d1;
+        }
+
+        .drishti-bg-gold {
+            background-color: #ffc107;
+        }
+
+        /* Warm Gold */
+        .drishti-text-gold {
+            color: #ffc107;
+        }
+
+        .drishti-bg-coral {
+            background-color: #ff7043;
+        }
+
+        /* Coral */
+        .drishti-text-coral {
+            color: #ff7043;
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: #004d40;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+            left: 0;
+            background-color: #004d40;
+        }
+
+        .active-section {
+            font-weight: 700;
+            color: #004d40;
+        }
+
+        .active-section:after {
+            width: 100%;
+            left: 0;
+            background-color: #004d40;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 600px;
+            /* Increased for more content */
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #004d40;
+            border: 4px solid #f8f9fa;
+        }
+
+        .section-detail-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .section-detail-header.active+.section-detail-content {
+            max-height: 1200px;
+            /* Generous height for expanded content */
+        }
+
+        .section-detail-header svg {
+            transition: transform 0.3s ease;
+        }
+
+        .section-detail-header.active svg {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="Drishtamix.ico" alt="Drishtamix Logo" class="w-8 h-8">
+                <span class="text-2xl font-bold drishti-gradient-text">Drishtamix</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#vision" class="nav-link text-gray-600 hover:text-gray-900">Vision</a>
+                <a href="#product" class="nav-link text-gray-600 hover:text-gray-900">Product</a>
+                <a href="#ecosystem" class="nav-link text-gray-600 hover:text-gray-900">Eco-System</a>
+                <a href="#business" class="nav-link text-gray-600 hover:text-gray-900">Business</a>
+                <a href="#competitive-edge" class="nav-link text-gray-600 hover:text-gray-900">Competitive Edge</a>
+                <a href="#roadmap" class="nav-link text-gray-600 hover:text-gray-900">Roadmap</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col space-y-4">
+            <a href="#vision" class="nav-link text-gray-600 hover:text-gray-900">Vision</a>
+            <a href="#product" class="nav-link text-gray-600 hover:text-gray-900">Product</a>
+            <a href="#ecosystem" class="nav-link text-gray-600 hover:text-gray-900">Eco-System</a>
+            <a href="#business" class="nav-link text-gray-600 hover:text-gray-900">Business</a>
+            <a href="#competitive-edge" class="nav-link text-gray-600 hover:text-gray-900">Competitive Edge</a>
+            <a href="#roadmap" class="nav-link text-gray-600 hover:text-gray-900">Roadmap</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="min-h-screen flex items-center justify-center bg-white">
+            <div class="text-center p-6" data-aos="fade-up" data-aos-duration="1000">
+                <img src="Picture1.png" alt="Drishtamix Mascot, a vibrant, wise owl with peacock feathers."
+                    class="w-48 h-48 mx-auto mb-8" data-aos="zoom-in" data-aos-delay="200">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <span class="drishti-gradient-text">Drishtamix</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-gray-600 font-medium" data-aos="fade-up" data-aos-delay="600">The
+                    Next Generation Social Ecosystem</h2>
+                <p class="text-xl text-gray-500 mt-4" data-aos="fade-up" data-aos-delay="800">See Differently. Share
+                    Uniquely.</p>
+                <p class="text-lg text-gray-500 mt-2" data-aos="fade-up" data-aos-delay="1000">A transformative
+                    half-year project, launching with an intensive 7-8 month development sprint.</p>
+            </div>
+        </section>
+
+        <section id="vision" class="py-20 px-6 container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4" data-aos="fade-down">Our Vision & Core Principles</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto" data-aos="fade-up">This section details the
+                foundational ideas, the critical problems we address in existing social media, and our core purpose,
+                solution, and strategic approach for Drishtamix.</p>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex justify-center mb-8 border border-gray-200 rounded-full p-1 max-w-sm mx-auto">
+                    <button id="problem-btn"
+                        class="w-1/2 py-2 px-4 rounded-full text-white drishti-bg-green font-semibold transition-colors duration-300">The
+                        Problem</button>
+                    <button id="purpose-btn"
+                        class="w-1/2 py-2 px-4 rounded-full text-gray-600 font-semibold transition-colors duration-300">Our
+                        Purpose</button>
+                </div>
+
+                <div id="vision-content">
+                    <div id="problem-content" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-red-50 p-6 rounded-lg border border-red-200" data-aos="fade-right">
+                            <h3 class="font-bold text-lg mb-2 text-red-800">The Idea Process: Rethinking Social Media
+                            </h3>
+                            <ul class="list-disc list-inside text-red-700 text-sm leading-relaxed">
+                                <li><span class="font-bold">Users crave originality, not clones:</span> Fatigue from
+                                    recycled content.</li>
+                                <li><span class="font-bold">Endless reels = empty engagement:</span> Superficial
+                                    consumption without lasting value.
+                                </li>
+                                <li><span class="font-bold">Creators lose to trend-followers:</span> True innovation is
+                                    overlooked in favor of
+                                    viral mimicry.</li>
+                                <li><span class="font-bold">Short content lacks long-term value:</span> Ephemeral trends
+                                    overshadow meaningful
+                                    creation.</li>
+                                <li><span class="font-bold">Mindless scrolling, not mindful sharing:</span> Current
+                                    platforms encourage passive
+                                    consumption.</li>
+                                <li><span class="font-bold">Time to redefine social media:</span> A fundamental shift is
+                                    needed.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 p-6 rounded-lg border border-red-200" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <h3 class="font-bold text-lg mb-2 text-red-800">The Core Problem: Valuing the Wrong Metrics
+                            </h3>
+                            <ul class="list-disc list-inside text-red-700 text-sm leading-relaxed">
+                                <li><span class="font-bold">Trend-following outshines originality:</span> Virality is
+                                    prioritized over genuine
+                                    creativity.</li>
+                                <li><span class="font-bold">Creators rarely get fair credit:</span> Lack of robust
+                                    attribution and ownership
+                                    systems.</li>
+                                <li><span class="font-bold">Low effort > High value content:</span> Algorithms favor
+                                    easily digestible,
+                                    mass-produced content.</li>
+                                <li><span class="font-bold">Content theft dilutes creator visibility:</span> Original
+                                    ideas are often copied
+                                    without consequence.</li>
+                                <li><span class="font-bold">No true community, just virality farms:</span> Connections
+                                    are shallow, driven by
+                                    fleeting trends.</li>
+                                <li><span class="font-bold">Eco-awareness absent in tech spaces:</span> A critical
+                                    missing component in platform
+                                    design.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="purpose-solution-approach-content" class="hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-green-50 p-6 rounded-lg border border-green-200" data-aos="fade-right">
+                            <h3 class="font-bold text-lg mb-2 text-green-800">Our Purpose: Redefining Social Interaction
+                            </h3>
+                            <ul class="list-disc list-inside text-green-700 text-sm leading-relaxed">
+                                <li><span class="font-bold">Empower creators, reward originality:</span> Fueling true
+                                    innovation and unique voices.
+                                </li>
+                                <li><span class="font-bold">Build mindful, purposeful engagement:</span> Encouraging
+                                    active, thoughtful
+                                    interaction.</li>
+                                <li><span class="font-bold">Support eco-friendly global connections:</span> Integrating
+                                    environmental impact into
+                                    daily use.</li>
+                                <li><span class="font-bold">Reclaim the value of ideas:</span> Ensuring intellectual
+                                    property is recognized and
+                                    valued.</li>
+                                <li><span class="font-bold">Redesign “addiction” as curiosity:</span> Shifting from
+                                    passive consumption to active
+                                    learning and growth.</li>
+                                <li><span class="font-bold">Social media with conscience & vision:</span> A platform
+                                    built on ethical principles.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-6 rounded-lg border border-green-200" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <h3 class="font-bold text-lg mb-2 text-green-800">Our Solution: The Drishtamix Ecosystem
+                            </h3>
+                            <ul class="list-disc list-inside text-green-700 text-sm leading-relaxed">
+                                <li><span class="font-bold">All-in-one creative + eco platform:</span> A holistic
+                                    digital environment.</li>
+                                <li><span class="font-bold">Content licensing + originality scoring:</span> Protecting
+                                    creators and valuing unique
+                                    contributions.</li>
+                                <li><span class="font-bold">GreenCoin for eco actions & tasks:</span> Monetizing
+                                    positive real-world impact.</li>
+                                <li><span class="font-bold">Vision Boards for mindful sharing:</span> Tools for personal
+                                    growth and collaborative
+                                    ideation.</li>
+                                <li><span class="font-bold">MixRooms: true interest-based community:</span> Deep,
+                                    immersive communal spaces.</li>
+                                <li><span class="font-bold">Local creator and farmer visibility:</span> Connecting local
+                                    talent and sustainable
+                                    producers.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-6 rounded-lg border border-green-200" data-aos="fade-left"
+                            data-aos-delay="200">
+                            <h3 class="font-bold text-lg mb-2 text-green-800">Our Approach: Intentional Design</h3>
+                            <ul class="list-disc list-inside text-green-700 text-sm leading-relaxed">
+                                <li><span class="font-bold">Personalized feeds by user “Mode”:</span> Content adapts to
+                                    your current intent (e.g.,
+                                    Learning, Creating, Socializing).</li>
+                                <li><span class="font-bold">Subprofiles for real-life identity layers:</span> Manage
+                                    Personal, Professional, and
+                                    Creative selves seamlessly.</li>
+                                <li><span class="font-bold">AI-based caption-content validation:</span> Ensures
+                                    authenticity and relevance of
+                                    posts.</li>
+                                <li><span class="font-bold">Community-first monetization + gamification:</span> Rewards
+                                    engagement and contribution
+                                    within communities.</li>
+                                <li><span class="font-bold">Creator-first, not virality-first:</span> Algorithms
+                                    prioritize originality and
+                                    quality.</li>
+                                <li><span class="font-bold">Eco-promoting system with direct impact:</span> Every
+                                    interaction can contribute to
+                                    real-world sustainability.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="product" class="py-20 px-6 bg-white">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-4" data-aos="fade-down">Drishtamix: Product & Core Features
+                </h2>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto" data-aos="fade-up">Dive into the specifics
+                    of Drishtamix, exploring its unique features, technological backbone, and who it's designed for.
+                    Each section below can be expanded for more detail.</p>
+
+                <div class="space-y-8">
+                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md" data-aos="fade-up">
+                        <h3
+                            class="text-2xl font-bold mb-3 drishti-text-green section-detail-header cursor-pointer flex justify-between items-center">
+                            <span>Our Product: Platform Functionality</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </h3>
+                        <div class="section-detail-content">
+                            <p class="text-gray-600 mb-4 leading-relaxed">Drishtamix is an all-encompassing platform
+                                designed to be your go-to for mindful and meaningful social interaction, supporting
+                                diverse forms of expression.</p>
+                            <ul class="list-disc list-inside text-gray-700 text-base leading-relaxed">
+                                <li><span class="font-bold">Multi-Format Features:</span> Supports Blogs, videos, audio,
+                                    photos, and chat – a truly
+                                    versatile platform for all content types.</li>
+                                <li><span class="font-bold">Vision Boards:</span> A blend of Pinterest and Notion,
+                                    enabling curated collections for
+                                    personal goals, inspirations, and collaborative ideas.</li>
+                                <li><span class="font-bold">GreenCoin Wallet:</span> Your central hub to earn and manage
+                                    GreenCoin through
+                                    eco-tasks and meaningful platform engagement.</li>
+                                <li><span class="font-bold">MixRooms:</span> Dynamic, interest-based social spaces
+                                    designed for deep community
+                                    engagement, featuring rich media sharing, polls, and structured threads.</li>
+                                <li><span class="font-bold">Creator Drops:</span> Exclusive, limited-time content events
+                                    from original thinkers and
+                                    certified creators, fostering unique and high-value interactions.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+                        <h3
+                            class="text-2xl font-bold mb-3 drishti-text-blue section-detail-header cursor-pointer flex justify-between items-center">
+                            <span>What Truly Differentiates Drishtamix</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </h3>
+                        <div class="section-detail-content">
+                            <ul class="list-disc list-inside text-gray-700 text-base leading-relaxed">
+                                <li><span class="font-bold">Originality gets ranked, copied doesn’t:</span> Our core
+                                    algorithm prioritizes and
+                                    boosts truly unique content, unlike platforms that reward viral mimicry.</li>
+                                <li><span class="font-bold">3-in-1 Subprofiles:</span> Seamlessly manage your distinct
+                                    Personal, Professional, and
+                                    Creative identities within a single, integrated account, with separate feeds and
+                                    privacy settings for each.</li>
+                                <li><span class="font-bold">AI to block cringe + spam:</span> Our advanced AI actively
+                                    filters out low-effort,
+                                    attention-seeking, and harmful content, ensuring a clean, trusted, and respectful
+                                    feed for all users.</li>
+                                <li><span class="font-bold">GreenCoin bridges digital & eco economy:</span> A unique,
+                                    utility-based currency that
+                                    rewards users for real-world environmental actions, directly linking platform
+                                    engagement to positive planetary impact.</li>
+                                <li><span class="font-bold">Encrypted identity + phishing guardrails:</span> We
+                                    prioritize user privacy with
+                                    end-to-end encrypted chats and implement advanced anti-phishing measures (like
+                                    custom codes in emails) for robust security.</li>
+                                <li><span class="font-bold">No algorithmic exploiters, only true discovery:</span> Our
+                                    algorithms are designed to
+                                    foster genuine exploration and connection based on user intent, rather than
+                                    manipulating behavior for ad revenue or mindless consumption.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                        <h3
+                            class="text-2xl font-bold mb-3 drishti-text-gold section-detail-header cursor-pointer flex justify-between items-center">
+                            <span>Technology & Architecture Backbone</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </h3>
+                        <div class="section-detail-content">
+                            <ul class="list-disc list-inside text-gray-700 text-base leading-relaxed">
+                                <li><span class="font-bold">Modular Microservice Backend (Go, Node.js):</span> Ensures
+                                    high scalability,
+                                    resilience, and independent deployment of services for rapid feature iteration.</li>
+                                <li><span class="font-bold">Originality AI Scoring Engine (LLM-based):</span> A
+                                    sophisticated model trained to
+                                    identify and score unique content, preventing plagiarism and rewarding creativity.
+                                </li>
+                                <li><span class="font-bold">Multi-wallet GreenCoin Integration (ETH/L2):</span>
+                                    Leverages blockchain for secure,
+                                    transparent, and efficient transactions within the GreenCoin ecosystem, using Layer
+                                    2 solutions for scalability.</li>
+                                <li><span class="font-bold">DRM + NFT Licensing for Content:</span> Digital Rights
+                                    Management combined with
+                                    Non-Fungible Tokens ensures verifiable proof-of-origin, tracks derivative works, and
+                                    enables automated attribution and royalty distribution for creators.</li>
+                                <li><span class="font-bold">Cross-platform App (Flutter + PWA):</span> Delivers a
+                                    consistent, high-performance user
+                                    experience across iOS, Android, and web browsers from a single codebase.</li>
+                                <li><span class="font-bold">Sustainable Cloud Hosting (Green servers):</span> Our
+                                    commitment to environmental
+                                    responsibility extends to our infrastructure, minimizing the carbon footprint of the
+                                    platform.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+                        <h3
+                            class="text-2xl font-bold mb-3 drishti-text-coral section-detail-header cursor-pointer flex justify-between items-center">
+                            <span>Target Audience & Practical Use Cases</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </h3>
+                        <div class="section-detail-content">
+                            <h4 class="font-bold text-lg mb-2">Primary Audience: Who Benefits Most?</h4>
+                            <ul class="list-disc list-inside text-gray-700 text-base mb-4 leading-relaxed">
+                                <li><span class="font-bold">Gen Z creators & thinkers:</span> Seeking authenticity,
+                                    impact, and fair recognition.
+                                </li>
+                                <li><span class="font-bold">Eco-conscious digital natives:</span> Looking for platforms
+                                    aligned with their values.
+                                </li>
+                                <li><span class="font-bold">Indie educators & changemakers:</span> Desiring tools for
+                                    impactful knowledge sharing
+                                    and community organizing.</li>
+                                <li><span class="font-bold">Farmers & conscious consumers:</span> Bridging the gap for
+                                    direct, sustainable
+                                    commerce.</li>
+                                <li><span class="font-bold">Organizations and community builders:</span> Seeking
+                                    ethical, functional spaces for
+                                    collaboration and outreach.</li>
+                            </ul>
+                            <h4 class="font-bold text-lg mb-2">Key Use Cases: How Drishtamix Comes to Life</h4>
+                            <ul class="list-disc list-inside text-gray-700 text-base leading-relaxed">
+                                <li><span class="font-bold">Artist Protection:</span> An artist posts their digital art
+                                    with a copyright NFT,
+                                    ensuring automatic attribution and potential royalties if remixed.</li>
+                                <li><span class="font-bold">Community Impact:</span> A local eco-group runs a
+                                    "neighborhood cleanup" challenge,
+                                    using GreenCoin to reward participants verified by photo proof.</li>
+                                <li><span class="font-bold">Direct-to-Consumer Sales:</span> A small organic farmer
+                                    connects with urban buyers
+                                    through the Farmer Direct Marketplace, accepting GreenCoin for fresh produce without
+                                    middlemen.</li>
+                                <li><span class="font-bold">Secure Knowledge Sharing:</span> A writer shares long-form
+                                    philosophical blogs on their
+                                    Creative subprofile, confident in content protection and semantic matching for
+                                    optimal reach.</li>
+                                <li><span class="font-bold">Collaborative Planning:</span> A startup team builds private
+                                    Vision Boards and uses
+                                    Workspace Collaboration tools to brainstorm ideas, track goals, and hold virtual
+                                    meetings securely.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ecosystem" class="py-20 px-6">
+            <div class="container mx-auto">
+                <div class="flex flex-col md:flex-row items-center justify-center mb-4 relative">
+                    <div class="flex-1 flex flex-col justify-center items-center md:items-start md:flex-row md:gap-4">
+                        <div class="flex-shrink-0 flex items-center justify-center h-full mr-0 md:mr-4">
+                            <div class="relative flex items-center justify-center" style="width:120px;height:120px;">
+                                <img src="Logo.png" alt="GreenCoin Logo" class="w-32 h-32 coin-3d-animation"
+                                    style="filter: drop-shadow(0 4px 16px rgba(0,77,64,0.25));" />
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-4xl font-bold text-center md:text-left mb-4" data-aos="fade-down">
+                                The GreenCoin Ecosystem
+                            </h2>
+                            <p class="text-center md:text-left text-gray-600 mb-12 max-w-3xl mx-auto"
+                                data-aos="fade-up">
+                                The GreenCoin ecosystem is the utility-based currency driving positive real-world impact
+                                within Drishtamix. It transforms engagement into tangible environmental and social
+                                rewards,
+                                fostering a guilt-free digital experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    .coin-3d-animation {
+                        animation: coin-spin 4s linear infinite;
+                        border-radius: 50%;
+                        box-shadow:
+                            0 2px 8px rgba(0, 77, 64, 0.15),
+                            0 0 0 8px #ffc107 inset,
+                            0 0 24px 4px rgba(255, 193, 7, 0.15);
+                        background: radial-gradient(circle at 60% 40%, #fffbe7 60%, #ffc107 100%);
+                    }
+
+                    @keyframes coin-spin {
+                        0% {
+                            transform: rotateY(0deg);
+                        }
+
+                        50% {
+                            transform: rotateY(180deg);
+                            animation-timing-function: steps(1, end);
+                        }
+
+                        60% {
+                            transform: rotateY(180deg);
+                        }
+
+                        100% {
+                            transform: rotateY(360deg);
+                        }
+                    }
+                </style>
+                <section id="drishti-forest" class="py-20 px-6 bg-green-50">
+                    <div class="container mx-auto">
+                        <h2 class="text-4xl font-bold text-center mb-4 drishti-text-green" data-aos="fade-down">
+                            Reforesting With Every Share</h2>
+                        <p class="text-center text-gray-700 max-w-3xl mx-auto mb-8" data-aos="fade-up">
+                            At Drishtamix, we believe technology must give back to nature. That's why we’re launching
+                            <strong>Drishti Forests</strong> — our own tree-planting initiative powered by your
+                            interactions.
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div data-aos="fade-right">
+                                <h3 class="text-2xl font-bold mb-2">Every Post Plants Potential</h3>
+                                <p class="text-gray-700 leading-relaxed">
+                                    For every verified eco-action, creator milestone, or high-impact post, we plant
+                                    native trees — not monocultures, but biodiverse, resilient forests.
+                                </p>
+                                <ul class="list-disc list-inside mt-4 text-gray-700">
+                                    <li><strong>Mixed forests</strong> only, never harmful monocultures.</li>
+                                    <li><strong>Native species</strong> that restore real ecosystems.</li>
+                                    <li><strong>Community-driven</strong> reforestation with local caretakers.</li>
+                                    <li><strong>Transparent tracking</strong> of every tree with geotags and dashboards.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div data-aos="fade-left">
+                                <h3 class="text-2xl font-bold mb-2">Reforestation as a Core Feature</h3>
+                                <p class="text-gray-700 leading-relaxed">
+                                    Like Ecosia plants trees with every search, <strong>Drishtamix plants hope with
+                                        every meaningful act</strong> — shares, creations, or GreenCoin rewards.
+                                </p>
+                                <p class="mt-4 text-gray-700">
+                                    We're building a restoration team, not just an app. Together, we will regenerate
+                                    forests, empower communities, and redefine social media as a tool for planetary
+                                    healing.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-12 text-center" data-aos="zoom-in">
+                            <p class="text-xl font-semibold text-gray-800 mb-2">So next time you create, engage, or
+                                share on Drishtamix…</p>
+                            <p class="text-2xl font-bold drishti-text-green">You’re not just posting. You’re planting.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-6 drishti-text-green text-center">GreenCoin: A Social-Environmental
+                        Currency</h3>
+                    <p class="text-gray-700 mb-8 text-center leading-relaxed">GreenCoin is not speculative; it's
+                        utility-based. Its value is derived from real actions and platform utility. You earn it from
+                        impactful contributions, spend it on real goods and services, and contribute to verifiable
+                        environmental and social change.</p>
+
+                    <div class="grid md:grid-cols-3 gap-8 text-center items-center">
+                        <div class="flex flex-col items-center" data-aos="fade-right" data-aos-delay="300">
+                            <div
+                                class="w-24 h-24 rounded-full drishti-bg-green flex items-center justify-center text-white text-3xl mb-4 shadow-md">
+                                🌿</div>
+                            <h4 class="text-xl font-bold mb-2">Earn GreenCoin by Acting & Creating</h4>
+                            <ul class="list-disc list-inside text-gray-600 text-sm leading-relaxed">
+                                <li>Completing IRL green acts (e.g., planting, cleanup, recycling, energy saving),
+                                    validated with photo/proof.</li>
+                                <li>Engaging meaningfully with high-originality content.</li>
+                                <li>Supporting sustainable brands (viewing specific ads or making purchases).</li>
+                                <li>Buying directly from farmers in the marketplace.</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="400">
+                            <svg class="w-20 h-20 text-gray-300 transform rotate-90 md:rotate-0" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col items-center" data-aos="fade-left" data-aos-delay="300">
+                            <div
+                                class="w-24 h-24 rounded-full drishti-bg-blue flex items-center justify-center text-white text-3xl mb-4 shadow-md">
+                                💰</div>
+                            <h4 class="text-xl font-bold mb-2">Use GreenCoin for Real Value</h4>
+                            <ul class="list-disc list-inside text-gray-600 text-sm leading-relaxed">
+                                <li><span class="font-bold">Farmer Direct Marketplace:</span> Purchase goods directly
+                                    from local farmers, ensuring
+                                    fair trade.</li>
+                                <li><span class="font-bold">Creator Support:</span> Tip creators for their unique
+                                    content and contributions.</li>
+                                <li><span class="font-bold">Exclusive Features:</span> Unlock deeper content layers or
+                                    premium app features.</li>
+                                <li><span class="font-bold">Real Rewards & Discounts:</span> Redeem for tangible
+                                    eco-friendly products or discounts
+                                    with verified sustainable brands.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 p-6 bg-gray-50 rounded-lg shadow-inner" data-aos="fade-up" data-aos-delay="500">
+                        <h4 class="font-bold text-lg mb-2 drishti-text-gold">Proof of Impact Dashboard</h4>
+                        <p class="text-gray-700 leading-relaxed">This interactive dashboard shows the real-world results
+                            of platform engagement: quantifiable metrics like trees planted, farmers directly supported,
+                            and carbon emissions offset. It provides tangible feedback, reinforcing the positive impact
+                            of every user's actions within the ecosystem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="business" class="py-20 px-6 bg-white">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-4" data-aos="fade-down">Business Model & Strategy</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto" data-aos="fade-up">This section details our
+                    sustainable business model, comprehensive revenue streams, market adoption strategies, and how we
+                    plan to tackle challenges to ensure Drishtamix's long-term success and positive impact.</p>
+                <div class="flex justify-center items-center mb-12 bg-gray-200 w-full">
+                    <img src="BMC.png" alt="Business Model Canvas"
+                        class="w-full max-w-5xl md:w-4/5 lg:w-9/10 rounded-xl mb-12"
+                        style="width:90%;max-width:1200px;" />
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6 drishti-text-green" data-aos="fade-right">Business Model
+                            Canvas: Key Pillars</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                                <h4 class="font-bold">Value Proposition</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">Originality +
+                                        Eco Impact + Profit</span> –
+                                    We offer a unique blend of creative recognition, environmental contribution, and
+                                    economic reward.</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                                <h4 class="font-bold">Users</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">Gen Z,
+                                        creators, organizations,
+                                        eco-conscious groups</span> – Our diverse target audience shares common values
+                                    for
+                                    authenticity and impact.</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                                <h4 class="font-bold">Channels</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">App store, Web,
+                                        Edu partnerships</span> –
+                                    Multi-platform presence and strategic collaborations for user acquisition.</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                                <h4 class="font-bold">Customer Relationships</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">Creator
+                                        support, organization
+                                        onboarding</span> – Focused, personalized support to foster loyalty and enable
+                                    effective
+                                    use.</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="500">
+                                <h4 class="font-bold">Key Activities</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">Community
+                                        building, AI filtering,
+                                        creator support</span> – Core operational tasks ensuring platform health and
+                                    growth.</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="600">
+                                <h4 class="font-bold">Resources</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">Creator
+                                        network, AI models, IP</span> –
+                                    Key assets driving platform value and competitive advantage.</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="700">
+                                <h4 class="font-bold">Partners</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">Green brands,
+                                        NGOs, artists</span> –
+                                    Strategic alliances to expand reach and impact.</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="800">
+                                <h4 class="font-bold">Costs</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">Cloud
+                                        infrastructure, AI operations,
+                                        creator support fund</span> – Primary expenditures for development and
+                                    maintenance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6 drishti-text-blue" data-aos="fade-left">Multi-Channel Revenue
+                            Model</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                                <h4 class="font-bold">1. GreenCoin Ecosystem Revenue</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600 leading-relaxed">
+                                    <li><span class="font-bold">Transaction Fees (2–5%):</span> Applied to
+                                        eco-challenges, peer-to-peer tips, and
+                                        sustainable product purchases.</li>
+                                    <li><span class="font-bold">Commission on Farmer-to-User Sales (5–10%):</span> From
+                                        direct marketplace
+                                        transactions, supporting local producers.</li>
+                                    <li><span class="font-bold">Token Exchange/Conversion Margin:</span> A small fee on
+                                        crypto to fiat or wallet
+                                        swaps within the platform.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                                <h4 class="font-bold">2. Premium Features (Freemium Tier)</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600 leading-relaxed">
+                                    <li><span class="font-bold">Pro Creator Subscriptions:</span> Offers analytics
+                                        dashboard, enhanced licensing
+                                        tools, and priority support.</li>
+                                    <li><span class="font-bold">Organization Accounts:</span> Provides internal
+                                        community spaces, advanced event
+                                        management, and detailed reporting features.</li>
+                                    <li><span class="font-bold">Sponsored Vision Board Placement:</span> Brands can pay
+                                        for curated placement
+                                        within relevant Vision Boards, integrated contextually.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                                <h4 class="font-bold">3. Advertising (Highly Filtered & Opt-in)</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600 leading-relaxed">
+                                    <li><span class="font-bold">Contextual Ads:</span> Based on a user's chosen "Mode"
+                                        or Vision Board topics, not
+                                        invasive behavioral tracking.</li>
+                                    <li><span class="font-bold">Eco-Sponsored Drops & MixRoom Promos:</span> Brands
+                                        sponsor exclusive content or
+                                        community events that align with sustainable values.</li>
+                                    <li><span class="font-bold">Local Business Discovery:</span> Promoted visibility via
+                                        the “Near Me” Mode for
+                                        verified eco-friendly local businesses.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                                <h4 class="font-bold">4. NFT Licensing & Marketplace</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600 leading-relaxed">
+                                    <li><span class="font-bold">Creator Minting:</span> Creators can mint their unique
+                                        content as NFTs directly on
+                                        the platform.</li>
+                                    <li><span class="font-bold">Drishtamix Fees:</span> Takes Minting Fees (gas + 5%
+                                        markup) and Secondary Sale
+                                        Royalties (2.5%), ensuring a fair share from creator success.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="500">
+                                <h4 class="font-bold">5. Events & Services</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600 leading-relaxed">
+                                    <li><span class="font-bold">Hosting Platform:</span> Facilitates eco-events,
+                                        webinars, and panel talks within
+                                        MixRooms or dedicated event spaces.</li>
+                                    <li><span class="font-bold">Revenue Share:</span> Fees for event tickets, virtual
+                                        booth space, and premium
+                                        promotions for organizers.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h3 class="text-3xl font-bold mb-6 drishti-text-gold text-center" data-aos="fade-down">Market
+                        Adoption Strategy: Building Our Community</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                            <h4 class="font-bold">College Campaigns & Eco Hackathons</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Engage Gen Z creators and eco-conscious
+                                students early, fostering a vibrant, talent-rich user base through targeted events.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                            <h4 class="font-bold">Creator Referral & Licensing Incentives</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Motivate established creators to join and
+                                invite their networks by offering clear economic benefits and content protection.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                            <h4 class="font-bold">NGO and Farmer Partnerships</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Collaborate with existing non-profits and
+                                agricultural organizations to onboard their communities and establish trust.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                            <h4 class="font-bold">Local Business Onboarding via MixRooms</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Facilitate the integration of local,
+                                sustainable businesses into community discussions and marketplaces.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="500">
+                            <h4 class="font-bold">AI-Powered Onboarding & Suggestions</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Personalize the user's initial experience,
+                                guiding them to relevant content, communities, and activities based on their expressed
+                                interests.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="600">
+                            <h4 class="font-bold">GreenCoin Eco Challenge Every Month</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Regular, gamified eco-challenges to
+                                maintain user engagement, drive real-world impact, and promote GreenCoin adoption.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h3 class="text-3xl font-bold mb-6 drishti-text-coral text-center" data-aos="fade-down">Navigating
+                        Challenges Ahead</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="p-4 bg-red-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                            <h4 class="font-bold">Educating users away from trends</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">Mitigation:</span>
+                                Our intent-first algorithm,
+                                gamified originality system, and focus on mindful engagement will naturally guide users
+                                towards higher-quality content.</p>
+                        </div>
+                        <div class="p-4 bg-red-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                            <h4 class="font-bold">Competing with addictive dopamine loops</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">Mitigation:</span>
+                                We offer "addiction by
+                                relevance" through hyper-personalized content, meaningful interaction loops, and
+                                guilt-free GreenCoin rewards, fostering intrinsic motivation.</p>
+                        </div>
+                        <div class="p-4 bg-red-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                            <h4 class="font-bold">Building trust in content scoring</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">Mitigation:</span>
+                                Transparency in our AI
+                                algorithms, blockchain-backed originality proofs, and clear moderation policies will
+                                build user confidence in content value.</p>
+                        </div>
+                        <div class="p-4 bg-red-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                            <h4 class="font-bold">Onboarding farmers + eco vendors</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">Mitigation:</span>
+                                Strategic NGO partnerships,
+                                localized outreach programs, and simplified onboarding tools tailored to their needs
+                                will facilitate adoption.</p>
+                        </div>
+                        <div class="p-4 bg-red-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="500">
+                            <h4 class="font-bold">Maintaining community over virality</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">Mitigation:</span>
+                                Emphasis on MixRooms and
+                                Drishti Clusters, quality engagement rating for interactions, and a deliberate absence
+                                of trend algorithms will foster genuine connections.</p>
+                        </div>
+                        <div class="p-4 bg-red-50 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="600">
+                            <h4 class="font-bold">Funding user rewards sustainably</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed"><span class="font-bold">Mitigation:</span>
+                                Our diverse multi-channel
+                                revenue model, utility-based tokenomics, and strong partnerships with green brands
+                                provide a robust funding mechanism for user rewards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="competitive-edge" class="py-20 px-6">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-4" data-aos="fade-down">Our Competitive Edge</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto" data-aos="fade-up">Drishtamix is not "just
+                    another social app." We are a wolf in sheep's clothing: addictive but enriching, designed to pull
+                    people in for all the right reasons. This section details what truly sets us apart from the
+                    competition.</p>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-6 drishti-text-green text-center">How We're Fundamentally Different
+                    </h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                            <h4 class="font-bold">Trends Discouraged</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Our algorithms actively de-emphasize
+                                fleeting trends, valuing and promoting unique thought and original content instead.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                            <h4 class="font-bold">No Mindless Virality</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">We focus on fostering quality engagement
+                                and meaningful interactions, moving away from superficial, mass-produced viral content.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                            <h4 class="font-bold">Multi-Format + Mode-Based Feed</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Our dynamic feed adapts to the user's
+                                chosen mode (e.g., Learn, Create, Social) and content format preference, offering a
+                                highly personalized experience.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                            <h4 class="font-bold">Original Creator Always Credited</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Leveraging blockchain and AI, original
+                                creators are guaranteed prominent, immutable attribution and economic benefit, even when
+                                their content is remixed.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="500">
+                            <h4 class="font-bold">Eco-First Monetization System</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Our GreenCoin ecosystem directly rewards
+                                users for positive real-world environmental actions and supports sustainable businesses,
+                                embedding impact into our core economy.</p>
+                        </div>
+
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                            <h4 class="font-bold">Gamification System</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-600 leading-relaxed">
+                                <li><span class="font-bold">Streaks, eco-challenges, leaderboard</span> in MixRooms to
+                                    boost consistent engagement.
+                                </li>
+                                <li><span class="font-bold">Points convert to GreenCoin or badges</span>, creating
+                                    clear, motivating rewards for
+                                    platform activity.</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                            <h4 class="font-bold">Sustainability Partnerships</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-600 leading-relaxed">
+                                <li><span class="font-bold">Allow brands to verify eco-friendly claims</span> and
+                                    display “Green Verified” tags for
+                                    sponsors/products.</li>
+                                <li><span class="font-bold">Integrated validation</span> for product sustainability,
+                                    building user trust.</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                            <h4 class="font-bold">Drishtamix for Organizations</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-600 leading-relaxed">
+                                <li><span class="font-bold">Dedicated organization login</span> enabling a private,
+                                    intranet-style feed for
+                                    internal teams.</li>
+                                <li><span class="font-bold">Features for announcements, networking, and hiring</span>
+                                    within a secure
+                                    organizational context.</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                            <h4 class="font-bold">Local Discovery</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-600 leading-relaxed">
+                                <li><span class="font-bold">“OwlMap” feature</span> (similar to Meetup + Snapchat Map)
+                                    for visualizing nearby
+                                    creators, workshops, and eco-events.</li>
+                                <li><span class="font-bold">Connects digital interaction with real-world
+                                        participation</span>, fostering local
+                                    communities.</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="500">
+                            <h4 class="font-bold">Content Moderation</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-600 leading-relaxed">
+                                <li><span class="font-bold">AI-based originality + toxicity scoring</span> for proactive
+                                    content filtering.</li>
+                                <li><span class="font-bold">Pre-emptive moderation</span> combined with user opt-in
+                                    flagging for comprehensive
+                                    content control.</li>
+                                <li><span class="font-bold">Misinformation detection</span> with verified tags ensures
+                                    factual accuracy and
+                                    prevents harmful narratives.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-6 drishti-text-blue text-center" data-aos="fade-down">Competitive
+                        Positioning Matrix: Where Drishtamix Excels</h3>
+                    <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                        <div class="chart-container" data-aos="zoom-in" data-aos-delay="100">
+                            <canvas id="competitionChart"></canvas>
+                        </div>
+                        <div class="flex justify-center items-center" data-aos="fade-left" data-aos-delay="200">
+                            <img src="CompetitionMatrix.png" alt="Competition Matrix"
+                                class="w-full max-w-md rounded-xl shadow-lg transition-transform duration-700 hover:scale-105" />
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6 drishti-text-gold text-center" data-aos="fade-down">Competitive
+                        Advantage Summary: Why We Win</h3>
+                    <div class="grid md:grid-cols-2 gap-6 mb-12">
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                            <h4 class="font-bold">Originality Protection: <span class="text-green-600">Yes, with AI +
+                                    Licensing</span></h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Our robust systems safeguard intellectual
+                                property.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                            <h4 class="font-bold">Eco Monetization: <span class="text-green-600">Yes, GreenCoin
+                                    Ecosystem</span></h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Monetizing real-world positive impact.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                            <h4 class="font-bold">Identity Layers: <span class="text-green-600">Yes, 3
+                                    Subprofiles</span></h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Seamlessly manage personal, professional,
+                                and creative selves.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                            <h4 class="font-bold">Real Community Tools: <span class="text-green-600">Yes, MixRooms &
+                                    Vision Boards</span></h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Fostering deep, interest-based connections.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="500">
+                            <h4 class="font-bold">Multiformat Content: <span class="text-green-600">Yes: Text, Audio,
+                                    Visual</span></h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Comprehensive support for all forms of
+                                expression.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="600">
+                            <h4 class="font-bold">Trend Suppression: <span class="text-green-600">Yes, Non-algorithmic
+                                    ranking</span></h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Prioritizing unique insights over fleeting
+                                fads.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg" data-aos="fade-up" data-aos-delay="700">
+                            <h4 class="font-bold">Earning from Engagement: <span class="text-green-600">Yes, not just
+                                    views</span></h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">Rewarding quality interaction and
+                                contribution.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="py-20 px-6 bg-white">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-4" data-aos="fade-down">Roadmap & Dedicated Team</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto" data-aos="fade-up">This section outlines
+                    our ambitious 7-8 month roadmap for initial development and rollout of Drishtamix, followed by our
+                    long-term scaling plan. It also introduces the dedicated team required to bring this vision to life.
+                    We are committed to working hard to achieve our goals.</p>
+
+                <h3 class="text-3xl font-bold mb-6 drishti-text-green text-center" data-aos="fade-down">Market Adoption
+                    Timeline (First 12–18 months)</h3>
+                <div class="relative pl-8 border-l-2 border-gray-200">
+                    <div class="timeline-item mb-12" data-aos="fade-right">
+                        <h4 class="text-xl font-bold drishti-text-blue">Phase 1: Alpha & Foundation (Month 1–3)</h4>
+                        <ul class="list-disc list-inside text-gray-600 text-base leading-relaxed">
+                            &nbsp;&nbsp;&nbsp;&nbsp;Alpha launch with core features, targeting student creators & NGOs
+                            for initial
+                            feedback.
+
+                        </ul>
+                    </div>
+                    <div class="timeline-item mb-12" data-aos="fade-right" data-aos-delay="100">
+                        <h4 class="text-xl font-bold drishti-text-blue">Phase 2: GreenCoin & Eco Brands (Month 4–6)</h4>
+                        <ul class="list-disc list-inside text-gray-600 text-base leading-relaxed">
+                            &nbsp;&nbsp;&nbsp;&nbsp;Launch GreenCoin ecosystem and onboard initial eco-conscious brands.
+                        </ul>
+                    </div>
+                    <div class="timeline-item mb-12" data-aos="fade-right" data-aos-delay="200">
+                        <h4 class="text-xl font-bold drishti-text-blue">Phase 3: Regional Growth (Month 7–9)</h4>
+                        <ul class="list-disc list-inside text-gray-600 text-base leading-relaxed">
+                            &nbsp;&nbsp;&nbsp;&nbsp;Focused Indian regional creator onboarding and community expansion.
+
+
+                        </ul>
+                    </div>
+                    <div class="timeline-item mb-12" data-aos="fade-right" data-aos-delay="300">
+                        <h4 class="text-xl font-bold drishti-text-blue">Phase 4: Global Expansion & Marketplace (Month
+                            10–12)</h4>
+                        <ul class="list-disc list-inside text-gray-600 text-base leading-relaxed">
+                            &nbsp;&nbsp;&nbsp;&nbsp;Launch Farmer-Direct Marketplace and begin international
+                            organization outreach.
+
+                        </ul>
+                    </div>
+                    <div class="timeline-item mb-12" data-aos="fade-right" data-aos-delay="400">
+                        <h4 class="text-xl font-bold drishti-text-blue">Phase 5: Global Drops & Premium Features (Month
+                            13–15)</h4>
+                        <ul class="list-disc list-inside text-gray-600 text-base leading-relaxed">
+                            &nbsp;&nbsp;&nbsp;&nbsp;Roll out Global Creator Drops and introduce Premium MixRooms for
+                            advanced community
+                            features.
+
+                        </ul>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-right" data-aos-delay="500">
+                        <h4 class="text-xl font-bold drishti-text-blue">Phase 6: GreenCoin Ecosystem Expansion (Month
+                            16–18)</h4>
+                        <ul class="list-disc list-inside text-gray-600 text-base leading-relaxed">
+                            &nbsp;&nbsp;&nbsp;&nbsp;Expand GreenCoin utility and accessibility through integration with
+                            partner APIs.
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center" data-aos="fade-up">
+                    <h3 class="text-3xl font-bold mb-6 drishti-text-gold">Dedicated Team Roles & Hiring Plan</h3>
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm w-full sm:w-1/2 md:w-1/3 lg:w-1/5"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <h4 class="font-bold text-lg mb-1">Backend Developer</h4>
+                            <p class="text-sm text-gray-600">(Go, Node.js)</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm w-full sm:w-1/2 md:w-1/3 lg:w-1/5"
+                            data-aos="fade-up" data-aos-delay="200">
+                            <h4 class="font-bold text-lg mb-1">Frontend Developer</h4>
+                            <p class="text-sm text-gray-600">(Flutter, React)</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm w-full sm:w-1/2 md:w-1/3 lg:w-1/5"
+                            data-aos="fade-up" data-aos-delay="300">
+                            <h4 class="font-bold text-lg mb-1">UI/UX Expert</h4>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm w-full sm:w-1/2 md:w-1/3 lg:w-1/5"
+                            data-aos="fade-up" data-aos-delay="400">
+                            <h4 class="font-bold text-lg mb-1">AI/ML Engineer</h4>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm w-full sm:w-1/2 md:w-1/3 lg:w-1/5"
+                            data-aos="fade-up" data-aos-delay="500">
+                            <h4 class="font-bold text-lg mb-1">Legal/IP Advisor</h4>
+                            <p class="text-sm text-gray-600"><em>(Prof.)</em></p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mt-8 max-w-2xl mx-auto leading-relaxed">I will be driving this project,
+                        aiming to serve as the <span class="font-bold">full-stack developer</span> if separate frontend
+                        and backend roles are not
+                        feasible initially. I will seek <span class="font-bold">Sir's</span> invaluable guidance as our
+                        Legal/IP Advisor and
+                        assistance in building this dedicated team. We are prepared to work tirelessly to achieve this
+                        visionary ecosystem.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="drishti-bg-green text-gray-100 py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4">
+                <span class="text-2xl font-bold text-white">Drishtamix</span>
+                <span class="ml-2 text-sm font-semibold text-gray-200">©2025</span>
+            </div>
+            <p class="text-base text-gray-200 mb-2">A new vision for how we connect and create.</p>
+            <p class="text-sm text-gray-300 mb-4">Drishtamix™ is a trademark of my upcoming project. All rights
+                reserved.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-2 text-xs text-gray-300">
+                <span>
+                    <a href="#" class="hover:text-white font-semibold text-gray-200">Drishtamix</a> © 2025 by
+                    <a href="https://buymeacoffee.com/ckshetty"
+                        class="hover:text-white underline text-gray-200">CKShetty</a>
+                </span>
+                <span class="hidden md:inline-block">|</span>
+                <span>
+                    Licensed under
+                    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+                        class="hover:text-white underline text-gray-200">CC BY-NC-ND 4.0</a>
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC"
+                        class="inline-block ml-1" style="max-width:1em;max-height:1em;">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY"
+                        class="inline-block ml-1" style="max-width:1em;max-height:1em;">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC"
+                        class="inline-block ml-1" style="max-width:1em;max-height:1em;">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt="ND"
+                        class="inline-block ml-1" style="max-width:1em;max-height:1em;">
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Vision Section Toggle (Problem/Purpose)
+            const problemBtn = document.getElementById('problem-btn');
+            const purposeBtn = document.getElementById('purpose-btn');
+            const problemContent = document.getElementById('problem-content');
+            const purposeSolutionApproachContent = document.getElementById('purpose-solution-approach-content');
+
+            function showProblemContent() {
+                problemContent.classList.remove('hidden');
+                purposeSolutionApproachContent.classList.add('hidden');
+
+                problemBtn.classList.add('drishti-bg-green', 'text-white');
+                problemBtn.classList.remove('text-gray-600');
+                purposeBtn.classList.remove('drishti-bg-green', 'text-white');
+                purposeBtn.classList.add('text-gray-600');
+            }
+
+            function showPurposeContent() {
+                problemContent.classList.add('hidden');
+                purposeSolutionApproachContent.classList.remove('hidden');
+
+                purposeBtn.classList.add('drishti-bg-green', 'text-white');
+                purposeBtn.classList.remove('text-gray-600');
+                problemBtn.classList.remove('drishti-bg-green', 'text-white');
+                problemBtn.classList.add('text-gray-600');
+            }
+
+            problemBtn.addEventListener('click', showProblemContent);
+            purposeBtn.addEventListener('click', showPurposeContent);
+
+            // Initialize with problem content visible
+            showProblemContent();
+
+            // Accordion for Business Q&A and Section Detail Expanders
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const item = header.closest('.accordion-item');
+                    const content = item.querySelector('.accordion-content');
+                    const svg = header.querySelector('svg');
+
+                    // Close any other open accordion items in the same container
+                    const parentContainer = item.parentElement;
+                    parentContainer.querySelectorAll('.accordion-item.active').forEach(activeItem => {
+                        if (activeItem !== item) {
+                            activeItem.classList.remove('active');
+                            activeItem.querySelector('.accordion-header svg').classList.remove('rotate-180');
+                        }
+                    });
+
+                    // Toggle current item
+                    item.classList.toggle('active');
+                    svg.classList.toggle('rotate-180');
+                });
+            });
+
+            const sectionDetailHeaders = document.querySelectorAll('.section-detail-header');
+            sectionDetailHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    header.classList.toggle('active');
+                });
+            });
+
+            // Competition Radar Chart
+            const ctx = document.getElementById('competitionChart').getContext('2d');
+            const competitionData = {
+                labels: ['Community', 'Originality', 'Monetization', 'Eco Integration', 'Creator Tools', 'Content Formats', 'Privacy & Safety'],
+                datasets: [{
+                    label: 'Drishtamix',
+                    data: [5, 5, 5, 5, 5, 5, 5],
+                    backgroundColor: 'rgba(0, 77, 64, 0.2)',
+                    borderColor: 'rgba(0, 77, 64, 1)',
+                    pointBackgroundColor: 'rgba(0, 77, 64, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(0, 77, 64, 1)'
+                }, {
+                    label: 'Instagram/TikTok',
+                    data: [3, 1, 4, 1, 2, 4, 2],
+                    backgroundColor: 'rgba(255, 112, 67, 0.2)',
+                    borderColor: 'rgba(255, 112, 67, 1)',
+                    pointBackgroundColor: 'rgba(255, 112, 67, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(255, 112, 67, 1)'
+                }, {
+                    label: 'Reddit/Discord',
+                    data: [5, 2, 2, 1, 3, 3, 4],
+                    backgroundColor: 'rgba(2, 136, 209, 0.2)',
+                    borderColor: 'rgba(2, 136, 209, 1)',
+                    pointBackgroundColor: 'rgba(2, 136, 209, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(2, 136, 209, 1)'
+                }]
+            };
+            new Chart(ctx, {
+                type: 'radar',
+                data: competitionData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            ticks: {
+                                backdropColor: 'rgba(255, 255, 255, 0.75)',
+                                stepSize: 1,
+                                beginAtZero: true,
+                                max: 5
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += context.raw;
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Active Nav Link Highlighting on Scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('header nav a');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-section');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active-section');
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+
+</html>
